@@ -16,7 +16,7 @@ struct HomeViewRow: View {
     let time: String
     
     var body: some View {
-        ZStack {
+        ZStack(alignment: .leading) {
             
             Rectangle()
                 .foregroundColor(.white)
@@ -35,7 +35,7 @@ struct HomeViewRow: View {
                 Spacer()
                 
                 // Text
-                VStack(alignment: .leading, spacing: 10) {
+                VStack(alignment: .center, spacing: 10) {
                     
                     // Headline
                     Text(title)
@@ -75,6 +75,6 @@ struct HomeViewRow: View {
 
 struct HomeViewRow_Previews: PreviewProvider {
     static var previews: some View {
-        HomeViewRow(image: "swift", title: "Learn Swift", description: "Understand the fundamentals of the Swift programming language.", count: "10 Lessons", time: "3 Hours")
+        HomeViewRow(image: "swift", title: "Learn Swift", description: "Understand the fundamentals of the Swift programming language.", count: "10", time: "3 Hours")
     }
 }
