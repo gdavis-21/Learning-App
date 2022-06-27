@@ -28,15 +28,12 @@ struct HomeView: View {
                             
                             VStack(alignment: .leading, spacing: 25) {
                                 // Learning Card
-                                NavigationLink(destination: {
-                                    
+                                NavigationLink(tag: module.id, selection: $model.currentContentSelected, destination: {
                                     ContentView()
                                         .onAppear(perform: {
                                             model.beginModule(module.id)
                                         })
-                                    
                                 }, label: {
-                                    
                                     HomeViewRow(image: module.content.image, title: "Learn \(module.category)", description: module.content.description, count: "\(module.content.lessons.count) Lessons", time: module.content.time.capitalized)
                                 })
                                 
@@ -51,6 +48,7 @@ struct HomeView: View {
             }
             .navigationTitle("Get Started")
         }
+            .navigationViewStyle(.stack)
     }
 }
 

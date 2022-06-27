@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentViewRow: View {
     
     @EnvironmentObject var model: ContentModel
-    var lesson: Lesson
+    var index: Int
     
     var body: some View {
         
@@ -25,17 +25,16 @@ struct ContentViewRow: View {
             
             HStack(spacing: 30) {
                 
-                Text(String(lesson.id + 1))
+                Text(String(model.currentModule!.content.lessons[index].id + 1))
                     .bold()
                     .padding(.leading)
                 
                 VStack(alignment: .leading) {
                     
-                    Text(lesson.title)
+                    Text(model.currentModule!.content.lessons[index].title)
                         .bold()
-                    Text(lesson.duration)
+                    Text(model.currentModule!.content.lessons[index].duration)
                         .font(.caption)
-                    
                 }
             }
         }
