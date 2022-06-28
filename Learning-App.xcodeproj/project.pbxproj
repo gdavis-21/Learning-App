@@ -27,6 +27,7 @@
 		778DE2CF285A8FD600004021 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778DE2CE285A8FD600004021 /* Question.swift */; };
 		778DE2D1285A8FE200004021 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778DE2D0285A8FE200004021 /* Test.swift */; };
 		77C893EF286A794F00DCC7C7 /* RectangleCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C893EE286A794F00DCC7C7 /* RectangleCard.swift */; };
+		77C8940D286AAADB00DCC7C7 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C8940C286AAADB00DCC7C7 /* TestView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		778DE2CE285A8FD600004021 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		778DE2D0285A8FE200004021 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		77C893EE286A794F00DCC7C7 /* RectangleCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleCard.swift; sourceTree = "<group>"; };
+		77C8940C286AAADB00DCC7C7 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 				77832D3B28622E56002FE6AF /* ContentDetailView.swift */,
 				778508BD2863B85600CD8712 /* CodeTestView.swift */,
 				77C893EE286A794F00DCC7C7 /* RectangleCard.swift */,
+				77C8940C286AAADB00DCC7C7 /* TestView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -240,6 +243,7 @@
 				77832D3C28622E56002FE6AF /* ContentDetailView.swift in Sources */,
 				778DE2B22859178400004021 /* HomeView.swift in Sources */,
 				77C893EF286A794F00DCC7C7 /* RectangleCard.swift in Sources */,
+				77C8940D286AAADB00DCC7C7 /* TestView.swift in Sources */,
 				77832D36285FA2BD002FE6AF /* HomeViewRow.swift in Sources */,
 				778DE2B02859178400004021 /* LearningApp.swift in Sources */,
 				778508BE2863B85600CD8712 /* CodeTestView.swift in Sources */,
