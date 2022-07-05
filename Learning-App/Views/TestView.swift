@@ -73,17 +73,26 @@ struct TestView: View {
                 // Button
                 Button(action: {
                     
-                    submitted = true
-                    
-                    if selectedAnswerIndex == model.currentQuestion!.correctIndex {
-                        numCorrect += 1
+                    if submitted {
+                        // The user tapped the button to move to the next question.
+                        submitted = false
+                        selectedAnswerIndex = -1
+                        model.nextQuestion()
+                    }
+                    else {
+                        // The user tapped the button to submit the answer.
+                        submitted = true
+                        
+                        if selectedAnswerIndex == model.currentQuestion!.correctIndex {
+                            numCorrect += 1
+                        }
                     }
                     
                 }, label: {
                     ZStack {
                         RectangleCard(color: .green)
                             .frame(height: 48)
-                        Text("Submit")
+                        Text(buttonText)
                             .foregroundColor(.white)
                             .bold()
                     }
@@ -95,6 +104,22 @@ struct TestView: View {
         }
         else {
             ProgressView()
+        }
+    }
+    
+    var buttonText: String {
+        if submitted {
+            if model.currentQuestionIndex == model.currentModule!.test.questions.count - 1 {
+                // This is the last question
+                return "Finish"
+            }
+            else {
+                // There is another question
+                return "Next"
+            }
+        }
+        else {
+            return "Submit"
         }
     }
 }
