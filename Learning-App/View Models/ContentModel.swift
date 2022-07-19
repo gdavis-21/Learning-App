@@ -31,7 +31,11 @@ class ContentModel: ObservableObject {
     
     init() {
         
+        // Parse local, append to modules
         getLocalData()
+        
+        // Parse remote, append to modules
+        getRemoteData()
     }
     
     
@@ -76,6 +80,48 @@ class ContentModel: ObservableObject {
                 print(error)
             }
         }
+    }
+    
+    func getRemoteData() {
+        
+        // Path
+        let stringURL = "https://gdavis-21.github.io/Learning-App-Demo-Data/data2.json"
+        
+        // Create URL object
+        let url = URL(string: stringURL)
+        
+        guard url != nil else {
+            return
+        }
+        
+        // Create URLRequest object
+        let request = URLRequest(url: url!)
+        
+        // Get session and kick on request
+        let session = URLSession.shared
+        
+        let dataTask = session.dataTask(with: request) { data, response, error in
+            
+            // Check if there's an error
+            guard error == nil else {
+                // There was an error
+                return
+            }
+            // Handle response
+            let decoder = JSONDecoder()
+            
+            do {
+                let modules = try decoder.decode([Module].self, from: data!)
+                
+                self.modules += modules
+            }
+            catch {
+                print("Unable to parse JSON")
+            }
+        }
+        
+        dataTask.resume()
+        
     }
     
     // MARK: - Module Navigation Methods
